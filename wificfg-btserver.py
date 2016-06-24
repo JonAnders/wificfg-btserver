@@ -1,7 +1,7 @@
 import subprocess
 import re
 
-def scan_wifi:
+def scan_wifi():
     output = subprocess.check_output(['sudo', 'iwlist', 'wlan0', 'scan'])
     lines = output.splitlines()
     for line in lines:
