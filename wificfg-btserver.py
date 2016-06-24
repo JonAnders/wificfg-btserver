@@ -10,6 +10,8 @@ def scan_wifi():
         if match:
             networks.append(match.group(1))
 
+    return networks
+
 nets = scan_wifi()
 for net in nets:
     print "> " + net
