@@ -2,6 +2,8 @@ import subprocess
 import re
 from bluetooth import *
 
+print "yo"
+
 def scan_wifi():
     output = subprocess.check_output(['sudo', 'iwlist', 'wlan0', 'scan'])
     lines = output.splitlines()
