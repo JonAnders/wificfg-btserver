@@ -4,5 +4,6 @@ import re
 output = subprocess.check_output(['sudo', 'iwlist', 'wlan0', 'scan'])
 lines = output.splitlines()
 for line in lines:
-    if re.search("^\s+ESSID:\".+\"$", line):
-        print line
+    match = re.search("^\s+ESSID:\"(.+)\"$", line)
+    if match:
+        print match.group(1)
