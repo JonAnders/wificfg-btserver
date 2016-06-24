@@ -1,5 +1,8 @@
 import subprocess
+import re
 
 output = subprocess.check_output(['iwlist', 'wlan0', 'scan'])
 lines = output.splitlines()
-print len(lines)
+for line in lines:
+    if re.search("^\s+ESSID"):
+        print line
